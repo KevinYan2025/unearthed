@@ -2,16 +2,14 @@ import { log } from 'console';
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url'
-import giftData from '../data/gifts.js'
+import GiftsController from '../controllers/gifts.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.status(200).send(giftData)
-})
+router.get('/', GiftsController.getGifts)
 
 router.get('/:giftId', (req, res) => {
     console.log(path.resolve(__dirname, '../public/gift.html'));
@@ -19,4 +17,4 @@ router.get('/:giftId', (req, res) => {
     
   })
 
-  export default router
+export default router
