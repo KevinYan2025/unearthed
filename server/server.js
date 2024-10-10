@@ -5,6 +5,7 @@ const app = express();
 app.use(cors());
 
 import giftsRouter from './routes/gifts.js'
+app.use(express.json())
 app.use('/gifts', giftsRouter)
 app.get('/', (req, res) => {
     res.status(200).send('<h1 style="text-align: center; margin-top: 50px;">UnEarthed API</h1>')

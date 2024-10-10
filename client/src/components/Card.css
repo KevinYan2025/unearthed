@@ -13,6 +13,12 @@
     margin-bottom: 60px;
 
 }
+.top-container img {
+    float: right;
+    max-height: 40px;
+    margin-top: 10px;
+    margin-right: 8px; 
+  }
 
 .card img {
     height: 100%;
